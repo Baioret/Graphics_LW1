@@ -25,13 +25,16 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    glm::vec3 Vertices[3];
-    Vertices[0] = glm::vec3(-1.0f, -1.0f, 0.0f);
-    Vertices[1] = glm::vec3(1.0f, -1.0f, 0.0f);
-    Vertices[2] = glm::vec3(0.0f, 1.0f, 0.0f);
+    glm::vec3 Vertices[3]{
+        {-1.0f, -1.0f, 0.0f},
+        {1.0f, -1.0f, 0.0f},
+        {0.0f, 1.0f, 0.0f}
+    };
 
     glGenBuffers(1, &VBO);
+
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
 
     glutDisplayFunc(RenderSceneCB);
