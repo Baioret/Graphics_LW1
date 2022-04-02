@@ -25,11 +25,29 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    glm::vec3 Vertices[3]{
+    /*glm::vec3 Vertices[3]{
         {-1.0f, -1.0f, 0.0f},
         {1.0f, -1.0f, 0.0f},
         {0.0f, 1.0f, 0.0f}
-    };
+    };нормальный*/ 
+
+    /*glm::vec3 Vertices[3]{
+        {-1.0f, 1.0f, 0.0f},
+        {1.0f, 1.0f, 0.0f},
+        {0.0f, -1.0f, 0.0f}
+    };перевернутый*/
+
+    /*glm::vec3 Vertices[3]{
+        {1.0f, 1.0f, 0.0f},
+        {1.0f, -1.0f, 0.0f},
+        {-1.0f, 0.0f, 0.0f}
+    };*/ // на 90 град. по часовой
+
+    glm::vec3 Vertices[3]{
+        {-1.0f, 1.0f, 0.0f},
+        {-1.0f, -1.0f, 0.0f},
+        {1.0f, 0.0f, 0.0f}
+    }; // на 90 град. против часовой
 
     glGenBuffers(1, &VBO);
 
@@ -49,6 +67,7 @@ void RenderSceneCB()
     
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glColor3f(0.3f, 0.8f, 0.6f);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
     glDrawArrays(GL_TRIANGLES, 0, 3);
     glDisableVertexAttribArray(0);
