@@ -61,7 +61,7 @@ void glutMainLoop(void);
 ```
 The main GLUT loop launches the so-called GLUT heart, which provides the relationship between the operating system and those functions that are responsible for the window, receive information from input/output devices.
 
-<h3>Working with the buffers</h3>
+<h3>Working with buffers</h3>
 
 ```cpp
 glGenBuffer(1, &VBO);
